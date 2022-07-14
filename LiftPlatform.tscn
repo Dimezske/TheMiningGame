@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Machines/Liftplatform.png" type="Texture" id=1]
+
+[node name="LiftPlatform" type="StaticBody2D"]
+
+[node name="LiftPlatformSprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="LiftPlatformCollision" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 178, 206, 178, -153, -170, -155, -171, 203, -228, 201, -222, -202, 232, -201, 226, 204 )
