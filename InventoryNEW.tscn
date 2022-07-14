@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://InventoryNEW.gd" type="Script" id=1]
+[ext_resource path="res://Assets/GUI/inventory-slot.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[node name="PanelContainer" type="PanelContainer"]
+margin_left = 300.0
+margin_top = 500.0
+margin_right = 730.0
+margin_bottom = 594.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="Inventory" type="HBoxContainer" parent="." groups=["Items"]]
+margin_right = 430.0
+margin_bottom = 94.0
+
+[node name="InSlot" type="Panel" parent="Inventory"]
+margin_right = 80.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 80, 80 )
+theme = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )
+
+[node name="InSlot2" type="Panel" parent="Inventory"]
+margin_left = 84.0
+margin_right = 164.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 80, 80 )
+theme = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )
+
+[node name="InSlot3" type="Panel" parent="Inventory"]
+margin_left = 168.0
+margin_right = 248.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 80, 80 )
+theme = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )
+
+[node name="InSlot4" type="Panel" parent="Inventory"]
+margin_left = 252.0
+margin_right = 332.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 80, 80 )
+theme = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )
+
+[node name="InSlot5" type="Panel" parent="Inventory"]
+margin_left = 336.0
+margin_right = 416.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 80, 80 )
+theme = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )

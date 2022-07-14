@@ -1,0 +1,63 @@
+#Tool pickups
+#func get_tool_pickup():
+#	if Input.is_action_just_pressed("interact"):
+#		for area in $ItemPickupCollision.get_overlapping_areas():
+#			if area.is_in_group("Tools"):
+#				area.get_parent().remove_child(area)
+#				area.position = Vector2(0,0)
+#				$Position2D/Tools.add_child(area)
+#				isHoldingTool = true
+#  working on a Drop Tool Method
+#func drop_tool():
+#	if Input.is_action_just_pressed("drop"):
+#		for child in self.get_children():
+#			child.is_in_group("Position2D/Tools")
+			
+#allow for weapon to be picked up, set its position attached to the player
+
+#func get_weapon_pickup():
+#	if Input.is_action_just_pressed("interact"):
+#		for area in $ItemPickupCollision.get_overlapping_areas():
+#			if area.is_in_group("Weapons"):
+#				area.get_parent().remove_child(area)
+#				area.position = Vector2(0,-25)
+#				$Position2D/Weapons.add_child(area)
+#				isHoldingWeapon = true
+#				#if isHoldingWeapon == true:
+#
+#				# someone told me to put this here it has comments already
+#			for weapon in $Position2D/Weapons.get_children(): # Iterate over all weapons
+#				if 'fire' in weapon: # Does this "weapon" essentially have a fire button?
+#					weapon.fire() # Fire the weapon
+#					print('fire')
+				#else:
+					#pass
+# here for later
+
+func toggle_lazer():
+	var lazer_attachment = get_node("Position2D/Weapons/M4A1/LazerBeam")
+	if Input.is_action_just_pressed("Lazer"):
+		if isHoldingWeapon:
+			print("hasWeapon")
+			isLazer = !isLazer
+			if isLazer:
+				lazer_attachment.visible = true
+				#isLazer = true
+				print('lazer true')
+			else:
+				lazer_attachment.visible = false
+				#isLazer = false
+				print('lazer false')
+
+
+#onready var GunPos: = $Position2D/Weapons
+#var gun_data = {
+#	m4a1 = preload("res://M4A1.tscn")
+#}
+#func equip_gun(gun_type: String):
+#	for gun in GunPos.get_children():
+#		gun.queue_free()
+#
+#	var gun: Sprite = gun_data[gun_type].instance()
+#	GunPos.add_child(gun)
+#Signals
