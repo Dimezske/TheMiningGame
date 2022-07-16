@@ -18,6 +18,13 @@
         "StackSize": 10,
         "Description": "Quite a nice gun"
     },
+     "Trm17": {
+        "ItemCatagory": "AssaultRifle",
+        "ItemAttack": 2.75,
+        "ItemSpeed": 0.65,
+        "StackSize": 10,
+        "Description": "Tactical AssaultRifle"
+    },
     "Tac1": {
         "ItemCatagory": "SideArm",
         "ItemAttack": 1,

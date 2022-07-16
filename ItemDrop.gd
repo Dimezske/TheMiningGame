@@ -44,6 +44,8 @@ func init(item):
 		$Sprite.scale = Vector2(3,3)
 	elif item_name == "M4":
 		$Sprite.scale = Vector2(0.75,1)
+	elif item_name == "Trm17":
+		$Sprite.scale = Vector2(1.3,1.5)
 	elif item_name == "9mm Ammunition":
 		$Sprite.scale = Vector2(0.65,0.7)
 	else:
