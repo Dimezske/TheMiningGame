@@ -61,5 +61,10 @@
         "ItemCatagory": "Shoes",
         "StackSize": 1,
         "Description": "Some dirty boots!!"
+      },
+      "CopperMinerals": {
+        "ItemCatagory":	"Resource",
+	"StackSize": 99,
+	"Description": "Beautiful Granules of Copper Ore"
       }
 }
