@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://9mmAmmunition.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WarningFence.tscn" type="PackedScene" id=2]
@@ -51,6 +51,7 @@
 [ext_resource path="res://TacticalResponseGasMaskIdle.tscn" type="PackedScene" id=49]
 [ext_resource path="res://Trm17.tscn" type="PackedScene" id=50]
 [ext_resource path="res://CopperMinerals.tscn" type="PackedScene" id=51]
+[ext_resource path="res://MineRocks.tscn" type="PackedScene" id=52]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 128, 0, 128 )
@@ -629,6 +630,15 @@ position = Vector2( -496, 147 )
 
 [node name="CopperMinerals2" parent="World/YSort" instance=ExtResource( 51 )]
 position = Vector2( -536, 138 )
+
+[node name="MineRocks" parent="World/YSort" instance=ExtResource( 52 )]
+position = Vector2( 429, 383 )
+
+[node name="MineRocks2" parent="World/YSort" instance=ExtResource( 52 )]
+position = Vector2( 381, 346 )
+
+[node name="MineRocks3" parent="World/YSort" instance=ExtResource( 52 )]
+position = Vector2( 395, 420 )
 
 [node name="SystemDiagnosis" type="CanvasLayer" parent="World"]
 

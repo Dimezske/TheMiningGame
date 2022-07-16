@@ -64,7 +64,12 @@
       },
       "CopperMinerals": {
         "ItemCatagory":	"Resource",
-	"StackSize": 99,
+	"StackSize": 1000,
 	"Description": "Beautiful Granules of Copper Ore"
+      },
+      "MineRocks": {
+        "ItemCatagory":	"Resource",
+	"StackSize": 1000,
+	"Description": "Dusty Old Rocks"
       }
 }
