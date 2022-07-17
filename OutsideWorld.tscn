@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Assets/Tiles/concreteTile.jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/Tiles/Grass1.png" type="Texture" id=2]
@@ -48,6 +48,7 @@
 [ext_resource path="res://Rocks2.tscn" type="PackedScene" id=46]
 [ext_resource path="res://Rocks1.tscn" type="PackedScene" id=47]
 [ext_resource path="res://GunsAndAmmunitionSuppliesChain.tscn" type="PackedScene" id=48]
+[ext_resource path="res://Tree1.tscn" type="PackedScene" id=49]
 
 [sub_resource type="GDScript" id=6]
 
@@ -925,6 +926,9 @@ position = Vector2( 1613, 7247 )
 [node name="Rocks4" parent="OutSideWorldTileMap/YSort/Environment" instance=ExtResource( 47 )]
 position = Vector2( 1734, 1577 )
 
+[node name="Rocks5" parent="OutSideWorldTileMap/YSort/Environment" instance=ExtResource( 46 )]
+position = Vector2( -1213, 6784 )
+
 [node name="Doors" type="YSort" parent="OutSideWorldTileMap/YSort"]
 
 [node name="Trees" type="YSort" parent="OutSideWorldTileMap/YSort"]
@@ -933,6 +937,12 @@ z_index = 1
 [node name="Tree" parent="OutSideWorldTileMap/YSort/Trees" instance=ExtResource( 29 )]
 position = Vector2( 1564, 1612 )
 z_index = 2
+
+[node name="Tree1" parent="OutSideWorldTileMap/YSort/Trees" instance=ExtResource( 49 )]
+position = Vector2( -797, 1255 )
+
+[node name="Tree2" parent="OutSideWorldTileMap/YSort/Trees" instance=ExtResource( 49 )]
+position = Vector2( -1076, 6648 )
 
 [node name="ArmoredSwatVan" parent="OutSideWorldTileMap/YSort" instance=ExtResource( 35 )]
 position = Vector2( 269, 237 )

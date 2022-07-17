@@ -22,14 +22,6 @@ func _process(delta):
 			state = choose([MOVE, GRINDING])
 		GRINDING:
 			pass
-func _on_PlaceRocks_body_entered(body):
-	if body.name == "Character":
-		print("player detected")
-		player_in_range = true
-		if Input.is_action_just_pressed("interact"):
-			PlayerInventory.add_item(item_name, quantity)
-			print("Testing rock")
-			
 func move(delta):
 	position += direction * SPEED * delta
 
@@ -40,7 +32,26 @@ func choose(array):
 func _on_Timer_timeout():
 	$Timer.wait_time = choose([3.5, 6])
 	state = choose([MOVE,GRINDING])
-	
+func _input(event):
+	if event.is_action_pressed("interact"):
+		PlayerInventory.add_item(item_name, quantity)
+func init(item):
+	var new_item
+	item_name = item.item_name
+	quantity = item.item_quantity
+	if item_name == "MineRocks" and player_in_range:
+		item = new_item
+		item.position = Vector2(0, 0)
+		var placementNode = find_parent("PlaceCollison")
+		placementNode.remove_child(item)
+		add_child(item)
+		$Sprite.texture = item.get_node("TextureRect").texture
+		
+func _on_PlaceRocks_body_entered(body):
+	if body.name == "Player":
+		print("player detected")
+		player_in_range = true
+		
 func _on_PlaceRocks_body_exited(body):
-	if body.name == "Character":
+	if body.name == "Player":
 		player_in_range = false
