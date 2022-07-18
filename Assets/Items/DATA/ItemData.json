@@ -4,6 +4,11 @@
 	"StackSize": 99,
 	"Description": "Smells just like medicine"
    },
+   "SugarCaneSeeds": {
+        "ItemCatagory":	"Consumable",
+	"StackSize": 99,
+	"Description": "Packet of sugarcane seeds"
+   },
    "StarterMiningDrill": {
         "ItemCatagory": "Tool",
         "AddHealth": 5,

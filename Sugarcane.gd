@@ -1,34 +1,16 @@
 extends KinematicBody2D
 
-#Sugarcane growing
-#5 stages, grows over time, can be harvested when fully grown
-enum{
-	Growing,
-	Grown
-}
-var stage = Growing
+var filenames_array = ["res://Assets/Agriculture/Sugarcane-3.png", "res://Assets/Agriculture/Sugarcane-4.png", "res://Assets/Agriculture/Sugarcane-full.png"]
+
+var growing_stage = 0
+var final_stage = 2
 
 func _ready():
-	$Sprite.texture = load("res://Assets/Agriculture/Sugarcane-3.png")
-func _process(delta):
-	match stage:
-		Growing:
-			grow(delta)
-		Grown:
-			$Timer.paused = true
-func grow(delta):
-	$Sprite.texture = load("res://Assets/Agriculture/Sugarcane-3.png")
-	$Timer.wait_time = choose(Growing)
-	$Sprite.texture = load("res://Assets/Agriculture/Sugarcane-4.png")
-	$Timer.wait_time = 5
-	$Sprite.texture = load("res://Assets/Agriculture/Sugarcane-full.png")
-	$Timer.wait_time = 5
-	print("fullyGrown")
-	
-func choose(array):
-	array.shuffle()
-	return array.front()
+	$Sprite.texture = load(filenames_array[growing_stage])
 
 func _on_Timer_timeout():
-	$Timer.wait_time = choose([5,1])
-	stage = choose([Growing,Grown])
+	growing_stage += 1
+	$Sprite.texture = load(filenames_array[growing_stage])
+	if growing_stage == final_stage:
+		print("Grown")
+		$Timer.stop()
