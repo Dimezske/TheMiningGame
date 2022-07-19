@@ -452,8 +452,7 @@ z_index = 2
 [node name="Machines" type="YSort" parent="World/YSort"]
 
 [node name="RockGrinder" parent="World/YSort/Machines" instance=ExtResource( 4 )]
-position = Vector2( 701, 263 )
-z_index = 2
+position = Vector2( 700, 278 )
 
 [node name="MineLift" parent="World/YSort/Machines" instance=ExtResource( 16 )]
 position = Vector2( 117, -229 )

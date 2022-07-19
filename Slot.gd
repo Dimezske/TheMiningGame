@@ -29,6 +29,7 @@ func _ready():
 #	if randi() % 2 == 0:
 #		item = ItemClass.instance()
 #		add_child(item)
+
 	refresh_style()
 		
 func refresh_style():

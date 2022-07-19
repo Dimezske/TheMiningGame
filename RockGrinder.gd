@@ -3,7 +3,7 @@ var player_in_range : bool
 export var item_name = "MineRocks"
 var quantity = 1
 var player = null
-
+onready var inventory = get_tree().get_root().get_node("Game/World/YSort/Character/UserInterface/Inventory")
 enum{
 	MOVE,
 	GRINDING
@@ -14,6 +14,7 @@ var direction = Vector2.UP
 
 func _ready():
 	pass 
+
 func _process(delta):
 	match state:
 		MOVE:
@@ -32,9 +33,15 @@ func choose(array):
 func _on_Timer_timeout():
 	$Timer.wait_time = choose([3.5, 6])
 	state = choose([MOVE,GRINDING])
+	
 func _input(event):
-	if event.is_action_pressed("interact"):
-		PlayerInventory.add_item(item_name, quantity)
+	if event.is_action_pressed("interact") and player_in_range:
+		if event.is_action_pressed("interact"):
+			var grid = inventory.get_child(2)
+			for i in grid.get_child_count():
+				if(grid.get_child(i).item and grid.get_child(i).item.item_name == "MineRocks"):
+					print("success")
+
 func init(item):
 	var new_item
 	item_name = item.item_name
