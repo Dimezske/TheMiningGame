@@ -10,25 +10,10 @@ enum{
 }
 export var SPEED = 100
 var state = MOVE
-var direction = Vector2.UP
 
 onready var inventory = get_tree().get_root().get_node("Game/World/YSort/Character/UserInterface/Inventory")
 onready var grid = inventory.get_child(2)
 
-
-
-func _ready():
-	pass
-func _process(delta):
-	match state:
-		MOVE:
-			move(delta)
-			direction = choose([Vector2.UP,Vector2.DOWN])
-			state = choose([MOVE, GRINDING])
-		GRINDING:
-			pass
-func move(delta):
-	position += direction * SPEED * delta
 
 func choose(array):
 	array.shuffle()
@@ -55,21 +40,18 @@ func init(item):
 		$Sprite.texture = item.get_node("TextureRect").texture
 		
 func grind_item(item, i):
-	var item_drop = preload("res://ItemDrop.tscn").instance()
-	item_drop.init(item)
-	var player = get_tree().current_scene.find_node("Player", true)
-#	item_drop.global_position = player.global_position + Vector2(40,-25)
-	item_drop.global_position = Vector2(0,0)
-	$Path2D/PathFollow2D.add_child(item_drop)
+	var item_drop = preload("res://RocksPath.tscn").instance()
+	$PlaceRocks.add_child(item_drop)
 	
-	PlayerInventory.remove_item(grid.get_child(i))
-	grid.get_child(i).pickFromSlot()
-	var x = inventory.find_parent("UserInterface").get_child(inventory.find_parent("UserInterface").get_child_count() - 1)
-	inventory.find_parent("UserInterface").remove_child(x)
-	#grid.get_child(i).remove_child(item)
-	#grid.get_child(i).queue_free()
-	
-		
+	if item.item_quantity > 1:
+		item.item_quantity -= 1
+	else:
+		PlayerInventory.remove_item(grid.get_child(i))
+		grid.get_child(i).pickFromSlot()
+		var x = inventory.find_parent("UserInterface").get_child(inventory.find_parent("UserInterface").get_child_count() - 1)
+		inventory.find_parent("UserInterface").remove_child(x)
+
+
 func _on_PlaceRocks_body_entered(body):
 	if body.name == "Player":
 		print("player detected")
