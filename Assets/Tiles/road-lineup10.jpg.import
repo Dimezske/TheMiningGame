@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/road-line-horizontal3.jpg-52339c84c0dd659805f003afeed4de96.stex"
+path="res://.import/road-lineup10.jpg-426a64d351d72d77aaf04d0f905e0d12.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/road-line-horizontal3.jpg"
-dest_files=[ "res://.import/road-line-horizontal3.jpg-52339c84c0dd659805f003afeed4de96.stex" ]
+source_file="res://Assets/Tiles/road-lineup10.jpg"
+dest_files=[ "res://.import/road-lineup10.jpg-426a64d351d72d77aaf04d0f905e0d12.stex" ]
 
 [params]
 
