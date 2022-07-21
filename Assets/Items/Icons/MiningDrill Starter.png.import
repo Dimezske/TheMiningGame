@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Starter-MiningDrill.png-7ea190e88599f2de020fbe000a53e9e8.stex"
+path="res://.import/MiningDrill Starter.png-71126e9ff692d725619d84afd7145240.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/Icons/Starter-MiningDrill.png"
-dest_files=[ "res://.import/Starter-MiningDrill.png-7ea190e88599f2de020fbe000a53e9e8.stex" ]
+source_file="res://Assets/Items/Icons/MiningDrill Starter.png"
+dest_files=[ "res://.import/MiningDrill Starter.png-71126e9ff692d725619d84afd7145240.stex" ]
 
 [params]
 

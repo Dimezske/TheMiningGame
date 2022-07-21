@@ -41,7 +41,7 @@ func init(item):
 	else:
 		$quantityLbl.hide()
 	if item_name == "Slime Potion":
-		$Sprite.scale = Vector2(3,3)
+		$Sprite.scale = Vector2(1,1)
 	elif item_name == "M4":
 		$Sprite.scale = Vector2(0.75,1)
 	elif item_name == "Trm17":

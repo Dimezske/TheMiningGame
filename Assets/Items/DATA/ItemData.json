@@ -9,10 +9,10 @@
 	"StackSize": 99,
 	"Description": "Packet of sugarcane seeds"
    },
-   "StarterMiningDrill": {
+   "MiningDrill Starter": {
         "ItemCatagory": "Tool",
-        "AddHealth": 5,
-        "AddEnergy": 32,
+	"ItemAttack": 6,
+        "ItemSpeed": 2.75,
         "StackSize": 10,
         "Description": "Nice for drilling"
     },
