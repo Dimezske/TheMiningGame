@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Environment/CoastalWall1-beta-new.png" type="Texture" id=1]
+
+[node name="CoastalWalling" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -414, 108, -343, 117, -223, 97, -113, 47, -31, 35, 49, 51, 145, 65, 219, 85, 321, 83, 415, 104, 413, -262, 263, -253, 103, -223, -99, -239, -199, -231, -414, -255 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

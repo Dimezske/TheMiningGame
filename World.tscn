@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://9mmAmmunition.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WarningFence.tscn" type="PackedScene" id=2]
@@ -32,7 +32,6 @@
 [ext_resource path="res://UserInterface.gd" type="Script" id=30]
 [ext_resource path="res://Bobcat.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Inventory.tscn" type="PackedScene" id=32]
-[ext_resource path="res://M4.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Tac1.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Assets/Tiles/minerocks.jpg" type="Texture" id=35]
 [ext_resource path="res://Assets/Tiles/minetile4.png" type="Texture" id=36]
@@ -472,12 +471,6 @@ position = Vector2( -92, 230 )
 
 [node name="C4Large" parent="World/YSort/Weapons" instance=ExtResource( 48 )]
 position = Vector2( -15, 225 )
-
-[node name="M4-1" parent="World/YSort/Weapons" instance=ExtResource( 33 )]
-position = Vector2( -102, -57 )
-
-[node name="M4-2" parent="World/YSort/Weapons" instance=ExtResource( 33 )]
-position = Vector2( -102, 27 )
 
 [node name="Enemies" type="Node2D" parent="World/YSort"]
 
