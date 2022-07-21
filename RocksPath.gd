@@ -7,7 +7,7 @@ enum {
 	GRINDING
 	EXIT
 }
-
+onready var mineRocks = $PathFollow2D/MineRocks
 var copper_mineral = preload("res://CopperMinerals.tscn")
 var timer_counter = 0
 var time_to_grind = 4
@@ -15,6 +15,9 @@ export var SPEED = 100
 var state = MOVE
 var move_direction = 0
 onready var path_follow = get_child(0)
+
+func _ready():
+	mineRocks.can_be_picked = false
 
 func _physics_process(delta):
 	if timer_counter >= time_to_grind:

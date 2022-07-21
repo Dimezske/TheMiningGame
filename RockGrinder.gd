@@ -10,6 +10,7 @@ enum{
 }
 export var SPEED = 100
 var state = MOVE
+var item_drop = preload("res://RocksPath.tscn")
 
 onready var inventory = get_tree().get_root().get_node("Game/World/YSort/Character/UserInterface/Inventory")
 onready var grid = inventory.get_child(2)
@@ -27,6 +28,7 @@ func _input(event):
 		for i in grid.get_child_count():
 			if(grid.get_child(i).item and grid.get_child(i).item.item_name == "MineRocks"):
 				grind_item(grid.get_child(i).item, i)
+				
 func init(item):
 	var new_item
 	item_name = item.item_name
@@ -34,18 +36,17 @@ func init(item):
 	if item_name == "MineRocks" and player_in_range:
 		item = new_item
 		item.position = Vector2(0, 0)
-		var placementNode = find_parent("PlaceCollison")	
+		var placementNode = find_parent("PlaceCollison")    
 		placementNode.remove_child(item)
 		add_child(item)
 		$Sprite.texture = item.get_node("TextureRect").texture
 		
 func grind_item(item, i):
-	var item_drop = preload("res://RocksPath.tscn").instance()
-	$PlaceRocks.add_child(item_drop)
+	var new_drop = item_drop.instance()
+	$PlaceRocks.add_child(new_drop)
 	
-	if item.item_quantity > 1:
-		item.item_quantity -= 1
-	else:
+	item.item_quantity -= 1
+	if item.item_quantity <= 0:
 		PlayerInventory.remove_item(grid.get_child(i))
 		grid.get_child(i).pickFromSlot()
 		var x = inventory.find_parent("UserInterface").get_child(inventory.find_parent("UserInterface").get_child_count() - 1)
