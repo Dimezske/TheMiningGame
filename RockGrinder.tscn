@@ -1,16 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Machines/RockCrusher_Frame.png" type="Texture" id=1]
 [ext_resource path="res://RockGrinder.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Items/rocks1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Machines/RockCrusher_conveyer1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Machines/RockCrusher_Grinders-1-update.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Machines/RockCrusher_Base.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40.5, 38 )
-
-[sub_resource type="ShaderMaterial" id=2]
 
 [node name="RockGrinder" type="StaticBody2D"]
 script = ExtResource( 2 )
@@ -43,11 +40,6 @@ position = Vector2( -104.5, 214 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( -293, -51 )
-process_material = SubResource( 2 )
-texture = ExtResource( 3 )
 
 [connection signal="body_entered" from="PlaceRocks" to="." method="_on_PlaceRocks_body_entered"]
 [connection signal="body_exited" from="PlaceRocks" to="." method="_on_PlaceRocks_body_exited"]
