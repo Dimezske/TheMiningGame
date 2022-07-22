@@ -68,13 +68,13 @@ func add_item_to_empty_slot(item: ItemClass, slot: SlotClass):
 
 
 func add_item_quantity(slot: SlotClass, quantity_to_add: int):
-	match slot.slotType:
-		SlotClass.SlotType.HOTBAR:
-			hotbar[slot.slot_index][1] += quantity_to_add
-		SlotClass.SlotType.INVENTORY:
-			inventory[slot.slot_index][1] += quantity_to_add
-#		_:
-#			equips[slot.slot_index][1] += quantity_to_add
+		match slot.slot_type:
+			SlotClass.SlotType.HOTBAR:
+				hotbar[slot.slot_index][1] += quantity_to_add
+			SlotClass.SlotType.INVENTORY:
+				inventory[slot.slot_index][1] += quantity_to_add
+	#		_:
+	#			equips[slot.slot_index][1] += quantity_to_add
 
 
 func active_item_scroll_up() -> void:
